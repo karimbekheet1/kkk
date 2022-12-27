@@ -1,0 +1,145 @@
+Write a Java Program to enter Employees data and get Employee’s info by his ID 
+-	Employee class with attributes like Name, Age ,Years of experience ,Address (which is a nested class ), types(which is Enum) like Junior ,Senior and Lead
+-	Methods are the setter and getter and Calculate salary ,calculate Raise , hours of working ,working on weekends and etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package Employess_sys;
+
+public class Employee {
+    private String name ;
+   private int id, age, exp, salary;
+    enum Address {CAIRO, ALEX, SAHEL}
+
+    //constructor
+    public Employee (String name, int id) {
+        this.name =name;
+        this.id = id;
+
+    }
+    // setters and getters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+
+    public int calc_salary() {
+        return salary;
+
+    }
+
+    public int calc_raise() {
+
+        return salary*10;
+    }
+
+
+
+
+}
+
+
+package Employess_sys;
+
+public class emp_karim extends Employee {
+
+    private  String name= "karim";
+    private int id = 1;
+    private int salary = 666;
+
+  //param. constructor
+    public emp_karim(int id) {
+        super(name,id);
+        this.id = id;
+    }
+    
+    //getter i dont want to set id
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+   }
+
+
+
+
+    public int calc_salary() {
+        return salary;
+
+    }
+
+    public int calc_raise() {
+
+        return salary * 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package Employess_sys;
+
+public class Main {
+    public static void main(String[] args) {
+
+      //  Employee k1 = new emp_karim(1);
+        emp_karim k = new emp_karim(2);
+       // System.out.println(k.());
+       // System.out.println(k.getId());
+        //System.out.println(k.getinfo());
+      //  System.out.println(k1.calc_raise());
+        //k.getinfo();
+        System.out.println("id is " +k.getId());
+        System.out.println("salary is " +k.calc_salary());;
+       System.out.println("raise is " +k.calc_raise());
+    }
+}
